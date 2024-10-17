@@ -9,6 +9,9 @@ private:
 	ElDisciplina* pAnte;
 
 public:
+	ElDisciplina();
+	~ElDisciplina();
+
 	void setDisciplina(Disciplina* dc) { pDisciplina = dc; }
 	Disciplina* getDisciplina() { return pDisciplina; }
 

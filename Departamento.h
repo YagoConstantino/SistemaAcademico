@@ -27,6 +27,6 @@ public:
 	bool incluiDisciplina(Disciplina* pd);
 	bool removeDisciplina(Disciplina* pd);
 
-	void listeDisciplinas();
-	void listeDisciplinas2();
+	void listeDisciplinasInicio();
+	void listeDisciplinasFinal();
 };

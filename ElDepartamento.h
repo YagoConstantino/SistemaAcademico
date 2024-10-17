@@ -9,6 +9,8 @@ private:
 	ElDepartamento* pAnte;
 
 public:
+	ElDepartamento();
+	~ElDepartamento();
 
 	void setDepartamento(Departamento* al) { pDepartamento = al; }
 	Departamento* getDepartamento() { return pDepartamento; }

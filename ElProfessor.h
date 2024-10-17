@@ -8,6 +8,9 @@ private:
 	ElProfessor* pAnte;
 
 public:
+	ElProfessor();
+	~ElProfessor();
+
 	void setProfessor(Professor* pr) { pProfessor = pr; }
 	Professor* getProfessor() { return pProfessor; }
 

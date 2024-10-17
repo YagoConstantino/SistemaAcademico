@@ -16,7 +16,7 @@ private:
 	ElAluno* pAlunoAtual;
 
 public:
-	Disciplina(int na = 45, const char* ac = " ");
+	Disciplina(int na = 45, std::string ac = "");
 	~Disciplina();
 
 	Disciplina* pProx;
@@ -37,10 +37,7 @@ public:
 	bool incluirAluno(Aluno* pa);
 	bool excluirAluno(Aluno* pa);
 
-	void listarAlunos();
-	void listarAlunos2();
-
-
-
+	void listarAlunosInicio();
+	void listarAlunosFinal();
 
 };

@@ -8,6 +8,8 @@ private:
 	ElAluno* pAnte;
 
 public:
+	ElAluno();
+	~ElAluno();
 
 	void setAluno(Aluno* al) { pAluno = al; }
 	Aluno* getAluno() { return pAluno; }
