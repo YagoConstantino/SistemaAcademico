@@ -1,0 +1,16 @@
+﻿  Aluno.cpp
+C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicoV4\Aluno.cpp(33,14): error C2039: ' getProx': não é um membro de 'ElDisciplina'
+      C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicoV4\ElDisciplina.h(4,7):
+      consulte a declaração de 'ElDisciplina'
+  
+  Professor.cpp
+  Universidade.cpp
+C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicoV4\Universidade.cpp(33,15): error C2039: ' getProx': não é um membro de 'ElDepartamento'
+      C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicoV4\ElDepartamento.h(4,7):
+      consulte a declaração de 'ElDepartamento'
+  
+C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicoV4\Universidade.cpp(43,15): error C2039: ' getProx': não é um membro de 'ElDepartamento'
+      C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicoV4\ElDepartamento.h(4,7):
+      consulte a declaração de 'ElDepartamento'
+  
+  Gerando Código...
