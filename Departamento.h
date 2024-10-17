@@ -3,6 +3,7 @@
 class Universidade;
 class ElDisciplina;
 class Disciplina;
+
 class Departamento
 {
 private:
@@ -23,7 +24,9 @@ public:
 	void setUniversidade(Universidade* pu) { pUniv = pu; };
 	Universidade* getUniversidade() { return pUniv; }
 
-	void setDisciplina(Disciplina* pd);
+	bool incluiDisciplina(Disciplina* pd);
+	bool removeDisciplina(Disciplina* pd);
+
 	void listeDisciplinas();
 	void listeDisciplinas2();
 };

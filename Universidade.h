@@ -26,11 +26,13 @@ public:
 	void setNome(std::string& name) { nome = name; }
 	std::string& getNome() { return nome; };
 
-	void incluiDepart(Departamento* dp);
+	bool incluiDepart(Departamento* dp);
+	bool removeDepart(Departamento* dp);
 	void listaDepartInicial();
 	void listaDepartFinal();
 
-	void incluiProfessor(Professor* pr);
+	bool incluiProfessor(Professor* pr);
+	bool removeProfessor(Professor* pr);
 	void listaProfessorInicial();
 	void listaProfessorFinal();
 

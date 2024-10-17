@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "ELAluno.h"
+
 class Disciplina
 {
 private:
@@ -30,7 +31,7 @@ public:
 	void setArea(std::string& area) { areaConhecimento = area; }
 	std::string& getArea() { return areaConhecimento; }
 
-	void setDepartamento(Departamento* pd);
+	void setDepartamento(Departamento* pd) { pDeptoAssociado = pd; };
 	Departamento* getDepartamento() { return pDeptoAssociado; }
 
 	bool incluirAluno(Aluno* pa);
