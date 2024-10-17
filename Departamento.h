@@ -2,7 +2,7 @@
 #include <string>
 class Universidade;
 class ElDisciplina;
-class Disiciplina;
+class Disciplina;
 class Departamento
 {
 private:
@@ -17,8 +17,8 @@ public:
 	Departamento();
 	~Departamento();
 
-	void setNome(const char* name) { nome = name; }
-	const char* getNome() { return nome; }
+	void setNome(std::string& name) { nome = name; }
+	std::string& getNome() { return nome; }
 
 	void setUniversidade(Universidade* pu) { pUniv = pu; };
 	Universidade* getUniversidade() { return pUniv; }

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "ELAluno.h"
 class Disciplina
 {
 private:
