@@ -148,6 +148,12 @@
     <ClInclude Include="ElDepartamento.h" />
     <ClInclude Include="ElDisciplina.h" />
     <ClInclude Include="ElProfessor.h" />
+    <ClInclude Include="ElUniversidade.h" />
+    <ClInclude Include="ListaAluno.h" />
+    <ClInclude Include="ListaDepartamento.h" />
+    <ClInclude Include="ListaDisciplina.h" />
+    <ClInclude Include="ListaProfessor.h" />
+    <ClInclude Include="ListaUniversidade.h" />
     <ClInclude Include="Pessoa.h" />
     <ClInclude Include="Principal.h" />
     <ClInclude Include="Professor.h" />

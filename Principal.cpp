@@ -113,15 +113,8 @@ void Principal::inicializaAluno()
 
 }
 
-void Principal::Executar()
+void Principal::CalcIdade()
 {
-	SYSTEMTIME st;
-	GetLocalTime(&st);
-
-	diaH = st.wDay;
-	mesH = st.wMonth;
-	anoH = st.wYear;
-
 	Simao.calcIdade(diaH, mesH, anoH);
 	Leyza.calcIdade(diaH, mesH, anoH);
 	Thais.calcIdade(diaH, mesH, anoH);
@@ -131,29 +124,60 @@ void Principal::Executar()
 	B.calcIdade(diaH, mesH, anoH);
 	C.calcIdade(diaH, mesH, anoH);
 	D.calcIdade(diaH, mesH, anoH);
+}
 
+void Principal::listaDepartamento()
+{
 	printf("Departamentos e Professores da UTFPR\n");
 	UTFPR.listaDepartInicial();
 	UTFPR.listaProfessorInicial();
-	getchar();
+	system("pause");
+}
 
+void Principal::listaDisciplina()
+{
 	printf("\nDisciplinas dos Departamentos\n");
 	DAINF.listeDisciplinasInicio();
 	DAMAT.listeDisciplinasInicio();
-	getchar();
+	system("pause");
+}
 
+void Principal::listaAluno()
+{
 	printf("\nAlunos nas Disciplinas \n");
 	Algebra.listarAlunosInicio();
 	Calculo.listarAlunosInicio();
 	TecProg.listarAlunosInicio();
 	FundProg.listarAlunosInicio();
-	getchar();
+	system("pause");
+}
 
+void Principal::listaDisciplinaAluno()
+{
 	printf("\nDisciplinas de Cada Aluno\n");
 	A.listaDisciplinaInicial();
 	B.listaDisciplinaInicial();
 	C.listaDisciplinaInicial();
 	D.listaDisciplinaInicial();
-	getchar();
+	system("pause");
+}
+
+
+void Principal::Executar()
+{
+	SYSTEMTIME st;
+	GetLocalTime(&st);
+
+	diaH = st.wDay;
+	mesH = st.wMonth;
+	anoH = st.wYear;
+
+	CalcIdade();
+	listaDepartamento();
+	listaDisciplina();
+	listaAluno();
+	listaDisciplinaAluno();
+
+
 
 }

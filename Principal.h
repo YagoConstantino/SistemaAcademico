@@ -39,6 +39,13 @@ public:
 	void inicializaDepartamento();
 	void inicializaDisciplina();
 	void inicializaAluno();
+	
+	void CalcIdade();
+	void listaDepartamento();
+	void listaDisciplina();
+	void listaAluno();
+	void listaDisciplinaAluno();
+	void notasAlunos();
 
 	void Executar();
 };

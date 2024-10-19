@@ -3,6 +3,9 @@
 class Universidade;
 class ElDisciplina;
 class Disciplina;
+class ElProfessor;
+class Professor;
+
 
 class Departamento
 {
@@ -13,6 +16,9 @@ private:
 
 	ElDisciplina* pDisciplinaPrim;
 	ElDisciplina* pDisciplinaAtual;
+
+	ElProfessor* pProfessorPrim;
+	ElProfessor* pProfessorAtual;
 
 public:
 	Departamento();
@@ -29,4 +35,10 @@ public:
 
 	void listeDisciplinasInicio();
 	void listeDisciplinasFinal();
+
+	bool incluiProfessor(Professor* pr);
+	bool excluiProfessor(Professor* pr);
+
+	void listeProfessoresInicio();
+	void listeProfessoresFinal();
 };

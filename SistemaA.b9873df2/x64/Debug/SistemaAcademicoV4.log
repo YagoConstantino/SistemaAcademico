@@ -1,1 +1,11 @@
-﻿  SistemaAcademicoV4.vcxproj -> C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\x64\Debug\SistemaAcademicoV4.exe
+﻿  Aluno.cpp
+  Departamento.cpp
+  Disciplina.cpp
+  ElDepartamento.cpp
+  ElProfessor.cpp
+  Principal.cpp
+  Professor.cpp
+  SistemaAcademicoV4.cpp
+  Universidade.cpp
+  Gerando Código...
+  SistemaAcademicoV4.vcxproj -> C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\x64\Debug\SistemaAcademicoV4.exe
