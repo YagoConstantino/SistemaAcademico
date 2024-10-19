@@ -3,6 +3,7 @@
 #include "Departamento.h"
 #include "ElDisciplina.h"
 #include "Disciplina.h"
+#include "ListaDisciplina.h"
 #include <iostream>
 
 
@@ -11,9 +12,8 @@ Pessoa(dia,mes,ano)
 {
 	pUnivFiliado = nullptr;
 	pDepartFiliado = nullptr;
-
-	pDisciplinaPrim = nullptr;
-	pDisciplinaAtual = nullptr;
+	objListaDisciplina = new ListaDisciplina();
+	
     RA = -1;
 }
 
@@ -21,62 +21,34 @@ Aluno::Aluno() :Pessoa()
 {
 	pUnivFiliado = nullptr;
 	pDepartFiliado = nullptr;
-
-	pDisciplinaPrim = nullptr;
-	pDisciplinaAtual = nullptr;
+	objListaDisciplina = new ListaDisciplina();
+	
     RA = -1;
 }
 
 Aluno::~Aluno()
 {
-	ElDisciplina* aux = pDisciplinaPrim;
-	while (aux != nullptr)
-	{
-		ElDisciplina* no = aux;
-		aux = aux->getProx();
-		delete no;
-	}
 	pUnivFiliado = nullptr;
-	pDepartFiliado = nullptr;
-
-	pDisciplinaPrim = nullptr;
-	pDisciplinaAtual = nullptr;
+	pDepartFiliado = nullptr;	
+	delete objListaDisciplina;
 }
 
-void Aluno::incluiDisciplina(Disciplina* dc) {
-    ElDisciplina* el = new ElDisciplina();
-    el->setDisciplina(dc);
-
-    if (pDisciplinaAtual == nullptr && pDisciplinaPrim == nullptr) {
-        pDisciplinaPrim = el;
-        pDisciplinaAtual = el;
-    }
-    else {
-        pDisciplinaAtual->setProx(el);
-        el->setAnte(pDisciplinaAtual);
-        pDisciplinaAtual = el;
-    }
-
+bool Aluno::incluiDisciplina(Disciplina* pd)
+{
+	return objListaDisciplina->incluiDisciplina(pd);
 }
 
-void Aluno::listaDisciplinaInicial() {
-    ElDisciplina* aux = pDisciplinaPrim;
-    std::cout << "Disciplinas do Aluno " << getNome() << " (inicio -> fim):" << std::endl;
-
-    while (aux != nullptr) {
-        std::cout << " - " << aux->getDisciplina()->getNome() << std::endl;
-        aux = aux->getProx();
-    }
-    printf("\n");
+bool Aluno::removeDisciplina(Disciplina* pd)
+{
+	return objListaDisciplina->removeDisciplina(pd);
 }
 
-void Aluno::listaDisciplinaFinal() {
-    ElDisciplina* aux = pDisciplinaAtual;
-    std::cout << "Disciplinas do Aluno " << getNome() << " (fim -> inicio):" << std::endl;
+void Aluno::listeDisciplinasInicio()
+{
+	objListaDisciplina->listeDisciplinasInicio();
+}
 
-    while (aux != nullptr) {
-        std::cout << " - " << aux->getDisciplina()->getNome() << std::endl;
-        aux = aux->getAnte();
-    }
-    printf("\n");
+void Aluno::listeDisciplinasFinal()
+{
+	objListaDisciplina->listeDisciplinasFinal();
 }

@@ -1,21 +1,20 @@
-	#pragma once
-	#include "Departamento.h"
-	#include "ElDepartamento.h"
+#pragma once
+#include "Departamento.h"
+#include "ListaDepartamento.h"
+#include <string>
+#include "ListaProfessor.h"
 
-	#include <string>
-
-	class Professor;
-	class ElProfessor;
-	class Universidade
+class Professor;
+class ElProfessor;
+class ElDepartamento;
+class Universidade
 	{
 	private:
 		std::string nome;
 
-		ElDepartamento* pDepartPrim;
-		ElDepartamento* pDepartAtual;
+		ListaDepartamento* objListaDepartamento;
 
-		ElProfessor* pProfessorPrim;
-		ElProfessor* pProfessorAtual;
+		ListaProfessor* objListaProfessor;
 
 	public:
 
@@ -35,6 +34,4 @@
 		bool removeProfessor(Professor* pr);
 		void listaProfessorInicial();
 		void listaProfessorFinal();
-
-
 	};

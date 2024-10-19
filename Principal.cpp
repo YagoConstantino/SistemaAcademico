@@ -155,10 +155,10 @@ void Principal::listaAluno()
 void Principal::listaDisciplinaAluno()
 {
 	printf("\nDisciplinas de Cada Aluno\n");
-	A.listaDisciplinaInicial();
-	B.listaDisciplinaInicial();
-	C.listaDisciplinaInicial();
-	D.listaDisciplinaInicial();
+	A.listeDisciplinasInicio();
+	B.listeDisciplinasInicio();
+	C.listeDisciplinasInicio();
+	D.listeDisciplinasInicio();
 	system("pause");
 }
 

@@ -134,6 +134,10 @@
     <ClCompile Include="ElDepartamento.cpp" />
     <ClCompile Include="ElDisciplina.cpp" />
     <ClCompile Include="ElProfessor.cpp" />
+    <ClCompile Include="ListaAluno.cpp" />
+    <ClCompile Include="ListaDepartamento.cpp" />
+    <ClCompile Include="ListaDisciplina.cpp" />
+    <ClCompile Include="ListaProfessor.cpp" />
     <ClCompile Include="Pessoa.cpp" />
     <ClCompile Include="Principal.cpp" />
     <ClCompile Include="Professor.cpp" />

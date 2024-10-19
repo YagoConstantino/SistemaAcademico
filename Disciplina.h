@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "ELAluno.h"
+#include "ListaAluno.h"
 
 class Disciplina
 {
@@ -12,15 +13,13 @@ private:
 	int contAlunos;
 
 	Departamento* pDeptoAssociado;
-	ElAluno* pAlunoPrim;
-	ElAluno* pAlunoAtual;
+	ListaAluno* objListaAluno;
+	
 
 public:
 	Disciplina(int na = 45, std::string ac = "");
 	~Disciplina();
 
-	Disciplina* pProx;
-	Disciplina* pAnte;
 
 	void setID(int i) { id = i; }
 	int getID() { return id; }

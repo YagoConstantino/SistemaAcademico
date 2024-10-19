@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include "ListaDisciplina.h"
+#include "ListaProfessor.h"
+
 class Universidade;
 class ElDisciplina;
 class Disciplina;
@@ -14,11 +17,9 @@ private:
 
 	Universidade* pUniv;
 
-	ElDisciplina* pDisciplinaPrim;
-	ElDisciplina* pDisciplinaAtual;
+	ListaDisciplina* objListaDisciplina;
 
-	ElProfessor* pProfessorPrim;
-	ElProfessor* pProfessorAtual;
+	ListaProfessor* objListaProfessor;
 
 public:
 	Departamento();

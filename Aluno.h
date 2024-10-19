@@ -1,5 +1,6 @@
 #pragma once
 #include "Pessoa.h"
+class ListaDisciplina;
 class Universidade;
 class Departamento;
 class ElDisciplina;
@@ -11,9 +12,7 @@ private:
 	int RA;
 	Universidade* pUnivFiliado;
 	Departamento* pDepartFiliado;
-
-	ElDisciplina* pDisciplinaPrim;
-	ElDisciplina* pDisciplinaAtual;
+	ListaDisciplina* objListaDisciplina;
 
 public:
 	Aluno(int dia, int mes, int ano);
@@ -29,8 +28,10 @@ public:
 	void setDepartamento(Departamento* dp) { pDepartFiliado = dp; }
 	Departamento* getDepart() { return pDepartFiliado; }
 
-	void incluiDisciplina(Disciplina* dc);
-	void listaDisciplinaInicial();
-	void listaDisciplinaFinal();
+	bool incluiDisciplina(Disciplina* pd);
+	bool removeDisciplina(Disciplina* pd);
+
+	void listeDisciplinasInicio();
+	void listeDisciplinasFinal();
 
 };
