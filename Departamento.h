@@ -18,8 +18,8 @@ public:
 	Departamento();
 	~Departamento();
 
-	void setNome(std::string& name) { nome = name; }
-	std::string& getNome() { return nome; }
+	void setNome(std::string name) { nome = name; }
+	std::string getNome() { return nome; }
 
 	void setUniversidade(Universidade* pu) { pUniv = pu; };
 	Universidade* getUniversidade() { return pUniv; }

@@ -1,40 +1,40 @@
-#pragma once
-#include "Departamento.h"
-#include "ElDepartamento.h"
+	#pragma once
+	#include "Departamento.h"
+	#include "ElDepartamento.h"
 
-#include <string>
+	#include <string>
 
-class Professor;
-class ElProfessor;
-class Universidade
-{
-private:
-	std::string nome;
+	class Professor;
+	class ElProfessor;
+	class Universidade
+	{
+	private:
+		std::string nome;
 
-	ElDepartamento* pDepartPrim;
-	ElDepartamento* pDepartAtual;
+		ElDepartamento* pDepartPrim;
+		ElDepartamento* pDepartAtual;
 
-	ElProfessor* pProfessorPrim;
-	ElProfessor* pProfessorAtual;
+		ElProfessor* pProfessorPrim;
+		ElProfessor* pProfessorAtual;
 
-public:
+	public:
 
-	Universidade(std::string& name);
-	Universidade();
-	~Universidade();
+		Universidade(std::string& name);
+		Universidade();
+		~Universidade();
 
-	void setNome(std::string& name) { nome = name; }
-	std::string& getNome() { return nome; };
+		void setNome(std::string name){ nome = name; }
+		std::string& getNome() { return nome; };
 
-	bool incluiDepart(Departamento* dp);
-	bool removeDepart(Departamento* dp);
-	void listaDepartInicial();
-	void listaDepartFinal();
+		bool incluiDepart(Departamento* dp);
+		bool removeDepart(Departamento* dp);
+		void listaDepartInicial();
+		void listaDepartFinal();
 
-	bool incluiProfessor(Professor* pr);
-	bool removeProfessor(Professor* pr);
-	void listaProfessorInicial();
-	void listaProfessorFinal();
+		bool incluiProfessor(Professor* pr);
+		bool removeProfessor(Professor* pr);
+		void listaProfessorInicial();
+		void listaProfessorFinal();
 
 
-};
+	};

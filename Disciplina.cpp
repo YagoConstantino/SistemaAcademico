@@ -26,7 +26,7 @@ Disciplina::~Disciplina() {
 
 bool Disciplina::incluirAluno(Aluno* pa) {
     if (contAlunos >= numeroAlunos) {
-        std::cout << "Disciplina cheia! Não é possível adicionar mais alunos." << std::endl;
+        std::cout << "Disciplina cheia! Nao e possível adicionar mais alunos." << std::endl;
         return false;
     }
 
@@ -44,6 +44,10 @@ bool Disciplina::incluirAluno(Aluno* pa) {
     }
 
     contAlunos++;
+    pa->incluiDisciplina(this);
+    pa->setDepartamento(this->getDepartamento());
+    pa->setUniversidade(this->getDepartamento()->getUniversidade());
+
     return true;
 }
 
@@ -76,20 +80,22 @@ bool Disciplina::excluirAluno(Aluno* pa) {
 
 void Disciplina::listarAlunosInicio() {
     ElAluno* aux = pAlunoPrim;
-    std::cout << "Alunos da disciplina " << nome << " (início -> fim):" << std::endl;
+    std::cout << "Alunos da disciplina " << nome << " (inicio -> fim):" << std::endl;
 
     while (aux != nullptr) {
         std::cout << " - " << aux->getAluno()->getNome() << std::endl;
         aux = aux->getProx();
     }
+    printf("\n");
 }
 
 void Disciplina::listarAlunosFinal() {
     ElAluno* aux = pAlunoAtual;
-    std::cout << "Alunos da disciplina " << nome << " (fim -> início):" << std::endl;
+    std::cout << "Alunos da disciplina " << nome << " (fim -> inicio):" << std::endl;
 
     while (aux != nullptr) {
         std::cout << " - " << aux->getAluno()->getNome() << std::endl;
         aux = aux->getAnte();
     }
+    printf("\n");
 }

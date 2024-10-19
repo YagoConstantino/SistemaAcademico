@@ -57,25 +57,26 @@ void Aluno::incluiDisciplina(Disciplina* dc) {
         pDisciplinaAtual = el;
     }
 
- 
 }
 
 void Aluno::listaDisciplinaInicial() {
     ElDisciplina* aux = pDisciplinaPrim;
-    std::cout << "Disciplinas do Aluno " << getNome() << " (início -> fim):" << std::endl;
+    std::cout << "Disciplinas do Aluno " << getNome() << " (inicio -> fim):" << std::endl;
 
     while (aux != nullptr) {
         std::cout << " - " << aux->getDisciplina()->getNome() << std::endl;
         aux = aux->getProx();
     }
+    printf("\n");
 }
 
 void Aluno::listaDisciplinaFinal() {
     ElDisciplina* aux = pDisciplinaAtual;
-    std::cout << "Disciplinas do Aluno " << getNome() << " (fim -> início):" << std::endl;
+    std::cout << "Disciplinas do Aluno " << getNome() << " (fim -> inicio):" << std::endl;
 
     while (aux != nullptr) {
         std::cout << " - " << aux->getDisciplina()->getNome() << std::endl;
         aux = aux->getAnte();
     }
+    printf("\n");
 }

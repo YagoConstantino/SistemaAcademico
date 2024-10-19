@@ -78,6 +78,7 @@ void Departamento::listeDisciplinasInicio() {
         std::cout << "Disciplina: " << aux->getDisciplina()->getNome() << std::endl;
         aux = aux->getProx();
     }
+    printf("\n");
 }
 
 void Departamento::listeDisciplinasFinal() {
@@ -87,4 +88,5 @@ void Departamento::listeDisciplinasFinal() {
         std::cout << "Disciplina: " << aux->getDisciplina()->getNome() << std::endl;
         aux = aux->getAnte();
     }
+    printf("\n");
 }

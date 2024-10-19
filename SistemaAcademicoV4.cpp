@@ -1,7 +1,8 @@
 #include <iostream>
+#include "Principal.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Principal Sistema;
 }
 

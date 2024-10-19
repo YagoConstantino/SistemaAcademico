@@ -1,80 +1,44 @@
 #pragma once
-#include <iostream>
-#include "Universidade.h"
-#include "Departamento.h"
 #include "Professor.h"
 #include "Aluno.h"
+#include "Universidade.h"
+#include "Departamento.h"
 #include "Disciplina.h"
 
-class Principal {
+class Principal
+{
 private:
-    Universidade* universidades[3];
-    int totalProfessores = 6;
-    int totalAlunos = 24;
+	Professor Simao;
+	Professor Leyza;
+	Professor Dorini;
+	Professor Thais;
 
-    void criarUniversidades() {
-        universidades[0] = new Universidade("Cambridge");
-        universidades[1] = new Universidade("Oxford");
-        universidades[2] = new Universidade("Princeton");
-    }
+	Aluno A;
+	Aluno B;
+	Aluno C;
+	Aluno D;
 
-    void criarDepartamentos() {
-        for (int i = 0; i < 3; ++i) {
-            for (int j = 0; j < 3; ++j) {
-                Departamento* departamento = new Departamento();
-                departamento->setNome("Departamento " + std::to_string(j + 1));
-                universidades[i]->incluiDepart(departamento);
-                criarDisciplinas(departamento);
-            }
-        }
-    }
+	Universidade UTFPR;
 
-    void criarProfessores() {
-        for (int i = 0; i < totalProfessores; ++i) {
-            Professor* professor = new Professor("Professor " + std::to_string(i + 1));
-            universidades[i % 3]->incluiProfessor(professor);
-        }
-    }
+	Departamento DAINF;
+	Departamento DAMAT;
 
-    void criarAlunos() {
-        for (int i = 0; i < totalAlunos; ++i) {
-            Aluno* aluno = new Aluno("Aluno " + std::to_string(i + 1));
-            universidades[i % 3]->incluiAluno(aluno);
-        }
-    }
+	Disciplina FundProg;
+	Disciplina TecProg;
+	Disciplina Algebra;
+	Disciplina Calculo;
 
-    void criarDisciplinas(Departamento* departamento) {
-        for (int i = 0; i < 2; ++i) {
-            Disciplina* disciplina = new Disciplina("Disciplina " + std::to_string(i + 1));
-            departamento->incluiDisciplina(disciplina);
-        }
-    }
+	int diaH, mesH, anoH;
 
 public:
-    Principal() {
-        criarUniversidades();
-        criarDepartamentos();
-        criarProfessores();
-        criarAlunos();
-    }
+	Principal();
+	~Principal();
 
-    ~Principal() {
-        for (int i = 0; i < 3; ++i) {
-            delete universidades[i];
-        }
-    }
+	void inicializaUniversidade();
+	void inicializaProfessor();
+	void inicializaDepartamento();
+	void inicializaDisciplina();
+	void inicializaAluno();
 
-    void listarUniversidades() {
-        for (int i = 0; i < 3; ++i) {
-            std::cout << "Universidade: " << universidades[i]->getNome() << std::endl;
-            universidades[i]->listaDepartInicial();
-            universidades[i]->listaProfessorInicial();
-        }
-    }
+	void Executar();
 };
-
-int main() {
-    Principal principal;
-    principal.listarUniversidades();
-    return 0;
-}

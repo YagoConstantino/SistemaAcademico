@@ -135,6 +135,7 @@
     <ClCompile Include="ElDisciplina.cpp" />
     <ClCompile Include="ElProfessor.cpp" />
     <ClCompile Include="Pessoa.cpp" />
+    <ClCompile Include="Principal.cpp" />
     <ClCompile Include="Professor.cpp" />
     <ClCompile Include="SistemaAcademicoV4.cpp" />
     <ClCompile Include="Universidade.cpp" />

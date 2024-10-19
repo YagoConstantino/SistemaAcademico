@@ -19,8 +19,8 @@ public:
 	void calcIdade(int diaAt, int mesAt, int anoAt);
 	int getIdade() { return idadeP; }
 
-	void setNome(std::string& name) { nome = name; };
-	std::string& getNome() { return nome; };
+	void setNome(std::string name) { nome = name; };
+	std::string getNome() { return nome; };
 
 	void setID(int id) { ID = id; };
 	int getID() { return ID; };

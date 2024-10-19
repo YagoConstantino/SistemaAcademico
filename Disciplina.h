@@ -25,10 +25,10 @@ public:
 	void setID(int i) { id = i; }
 	int getID() { return id; }
 
-	void setNome(std::string& name) { nome = name; }
+	void setNome(std::string name) { nome = name; }
 	std::string& getNome() { return nome; }
 
-	void setArea(std::string& area) { areaConhecimento = area; }
+	void setArea(std::string area) { areaConhecimento = area; }
 	std::string& getArea() { return areaConhecimento; }
 
 	void setDepartamento(Departamento* pd) { pDeptoAssociado = pd; };
