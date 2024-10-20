@@ -17,4 +17,8 @@ public:
 
 	void listeDisciplinasInicio();
 	void listeDisciplinasFinal();
+
+	ElDisciplina* getPprim() { return pDisciplinaPrim; }
+	ElDisciplina* buscaDisciplina(std::string& nome);
+
 };

@@ -140,6 +140,7 @@
     <ClCompile Include="ListaDisciplina.cpp" />
     <ClCompile Include="ListaProfessor.cpp" />
     <ClCompile Include="ListaUniversidade.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Pessoa.cpp" />
     <ClCompile Include="Principal.cpp" />
     <ClCompile Include="Professor.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="ListaDisciplina.h" />
     <ClInclude Include="ListaProfessor.h" />
     <ClInclude Include="ListaUniversidade.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Pessoa.h" />
     <ClInclude Include="Principal.h" />
     <ClInclude Include="Professor.h" />

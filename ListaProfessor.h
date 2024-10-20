@@ -17,4 +17,7 @@ public:
 
 	void listeProfessoresInicio(std::string& nome);
 	void listeProfessoresFinal(std::string& nome);
+
+	ElProfessor* getPprim() { return pProfessorPrim; }
+	ElProfessor* buscaProfessor(std::string& nome);
 };

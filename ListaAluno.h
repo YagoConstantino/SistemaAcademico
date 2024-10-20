@@ -22,6 +22,8 @@ public:
 	void listarAlunosInicio(std::string& nome);
 	void listarAlunosFinal(std::string& nome);
 
+	ElAluno* buscaAluno(std::string& nome);
+
 	ElAluno* getAlunoPrim() { return pAlunoPrim; }
 
 };

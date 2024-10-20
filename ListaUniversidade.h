@@ -16,4 +16,7 @@ public:
 
 	void listaUniversidadeInicio();
 	void listaUniversidadeFinal();
+
+	ElUniversidade* getpPrim() { return pPrim; }
+	ElUniversidade* buscaUniv(std::string& nome);
 };
