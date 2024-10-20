@@ -14,6 +14,6 @@ public:
 
 	bool incluiDepart(Departamento* dp);
 	bool removeDepart(Departamento* dp);
-	void listaDepartInicial(std::string& nome);
-	void listaDepartFinal(std::string& nome);
+	void listaDepartInicial();
+	void listaDepartFinal();
 };

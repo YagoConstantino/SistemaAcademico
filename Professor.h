@@ -16,8 +16,10 @@ public:
 
 	void setUniv(Universidade* un) { pUnivFiliado = un; }
 	Universidade* getUniv() { return pUnivFiliado; }
+	std::string getNomeUniv() { return pUnivFiliado->getNome(); }
 
 	void setDepartamento(Departamento* dp) { pDepartFiliado = dp; }
 	Departamento* getDepart() { return pDepartFiliado; }
+	std::string getNomeDepart() { return pDepartFiliado->getNome(); }
 
 };
