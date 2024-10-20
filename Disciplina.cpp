@@ -36,3 +36,8 @@ void Disciplina::listarAlunosInicio() {
 void Disciplina::listarAlunosFinal() {
     objListaAluno->listarAlunosFinal(nome);
 }
+
+ElAluno* Disciplina::getAlunoPrim()
+{
+    return objListaAluno->getAlunoPrim();
+}

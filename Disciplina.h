@@ -39,4 +39,6 @@ public:
 	void listarAlunosInicio();
 	void listarAlunosFinal();
 
+	ElAluno* getAlunoPrim();
+
 };

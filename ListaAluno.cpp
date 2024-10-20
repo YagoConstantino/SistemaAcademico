@@ -43,24 +43,29 @@ bool ListaAluno::incluirAluno(Aluno* pa) {
 bool ListaAluno::excluirAluno(Aluno* pa) {
     ElAluno* aux = pAlunoPrim;
 
-    while (aux != nullptr && aux->getAluno()->getID() != pa->getID()) {
+    while (aux != nullptr && aux->getAluno()->getID() != pa->getID())
+    {
         aux = aux->getProx();
     }
 
-    if (aux == nullptr) {
+    if (aux == nullptr) 
+    {
         std::cout << "Aluno não encontrado." << std::endl;
         return false;
     }
 
-    if (aux == pAlunoPrim) {
+    if (aux == pAlunoPrim) 
+    {
         pAlunoPrim = aux->getProx();
         if (pAlunoPrim != nullptr) pAlunoPrim->setAnte(nullptr);
     }
-    else if (aux == pAlunoAtual) {
+    else if (aux == pAlunoAtual) 
+    {
         pAlunoAtual = aux->getAnte();
         if (pAlunoAtual != nullptr) pAlunoAtual->setProx(nullptr);
     }
-    else {
+    else 
+    {
         aux->getAnte()->setProx(aux->getProx());
         aux->getProx()->setAnte(aux->getAnte());
     }

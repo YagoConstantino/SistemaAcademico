@@ -83,7 +83,8 @@ void ListaProfessor::listeProfessoresInicio(std::string& nome)
     ElProfessor* aux = pProfessorPrim;
     std::cout << "Professores do Departamento " << nome << " (inicio -> fim):" << std::endl;
     while (aux != nullptr) {
-        std::cout << "Professor: " << aux->getProfessor()->getNome() << std::endl;
+        std::cout << "Professor: " << aux->getProfessor()->getNome()<<" Do "<<
+        aux->getProfessor()->getDepart()->getNome()<< std::endl;
         aux = aux->getProx();
     }
     std::cout << std::endl;
@@ -94,7 +95,8 @@ void ListaProfessor::listeProfessoresFinal(std::string& nome)
     ElProfessor* aux = pProfessorPrim;
     std::cout << "Professores do Departamento " << nome << " (inicio -> fim):" << std::endl;
     while (aux != nullptr) {
-        std::cout << "Professor: " << aux->getProfessor()->getNome() << std::endl;
+        std::cout << "Professor: " << aux->getProfessor()->getNome() << " Do "  <<
+        aux->getProfessor()->getDepart()->getNome() << std::endl;
         aux = aux->getAnte();
     }
     std::cout << std::endl;

@@ -3,6 +3,7 @@
 
 Principal::Principal()
 {
+	srand(time(NULL));
 	inicializaUniversidade();
 	inicializaDepartamento();
 	inicializaDisciplina();
@@ -132,6 +133,7 @@ void Principal::listaDepartamento()
 	UTFPR.listaDepartInicial();
 	UTFPR.listaProfessorInicial();
 	system("pause");
+	system("cls");
 }
 
 void Principal::listaDisciplina()
@@ -140,6 +142,7 @@ void Principal::listaDisciplina()
 	DAINF.listeDisciplinasInicio();
 	DAMAT.listeDisciplinasInicio();
 	system("pause");
+	system("cls");
 }
 
 void Principal::listaAluno()
@@ -150,6 +153,7 @@ void Principal::listaAluno()
 	TecProg.listarAlunosInicio();
 	FundProg.listarAlunosInicio();
 	system("pause");
+	system("cls");
 }
 
 void Principal::listaDisciplinaAluno()
@@ -160,6 +164,58 @@ void Principal::listaDisciplinaAluno()
 	C.listeDisciplinasInicio();
 	D.listeDisciplinasInicio();
 	system("pause");
+	system("cls");
+}
+
+void Principal::notasAlunos()
+{
+	
+	ElAluno* aux = FundProg.getAlunoPrim();
+	while (aux != nullptr)
+	{
+		aux->setN1(static_cast<float>(rand() % 11));
+		aux->setN2(static_cast<float>(rand() % 11));
+		std::cout << "O Aluno " << aux->getAluno()->getNome()
+			<< " tem media Final em Fundamentos da Programacao: "
+			<< aux->getNFinal() << std::endl;
+		aux = aux->getProx();
+	}
+
+	
+	aux = TecProg.getAlunoPrim();
+	while (aux != nullptr)
+	{
+		aux->setN1(static_cast<float>(rand() % 11)); 
+		aux->setN2(static_cast<float>(rand() % 11));
+		std::cout << "O Aluno " << aux->getAluno()->getNome()
+			<< " tem media Final em Tecnicas de Programacao: "
+			<< aux->getNFinal() << std::endl;
+		aux = aux->getProx();
+	}
+
+	
+	aux = Algebra.getAlunoPrim();
+	while (aux != nullptr)
+	{
+		aux->setN1(static_cast<float>(rand() % 11));
+		aux->setN2(static_cast<float>(rand() % 11));
+		std::cout << "O Aluno " << aux->getAluno()->getNome()
+			<< " tem media Final em Algebra: "
+			<< aux->getNFinal() << std::endl;
+		aux = aux->getProx();
+	}
+
+	
+	aux = Calculo.getAlunoPrim();
+	while (aux != nullptr)
+	{
+		aux->setN1(static_cast<float>(rand() % 11));
+		aux->setN2(static_cast<float>(rand() % 11));
+		std::cout << "O Aluno " << aux->getAluno()->getNome()
+			<< " tem media Final em Calculo: "
+			<< aux->getNFinal() << std::endl;
+		aux = aux->getProx();
+	}
 }
 
 
@@ -177,7 +233,6 @@ void Principal::Executar()
 	listaDisciplina();
 	listaAluno();
 	listaDisciplinaAluno();
-
-
+	notasAlunos();
 
 }

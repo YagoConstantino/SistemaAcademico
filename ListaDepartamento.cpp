@@ -75,7 +75,7 @@ void ListaDepartamento::listaDepartInicial(std::string& nome) {
 
     std::cout << "Departamentos da Universidade " << nome << " (inicio -> fim):" << std::endl;
     while (aux != nullptr) {
-        std::cout << "O Departamento " << aux->getDepartamento()->getNome() << " faz parte da Universidade " << nome << std::endl;
+        std::cout << aux->getDepartamento()->getNome() << " faz parte da Universidade " << nome << std::endl;
         aux = aux->getProx();
     }
     std::cout << std::endl;
@@ -86,7 +86,7 @@ void ListaDepartamento::listaDepartFinal(std::string& nome) {
 
     std::cout << "Departamentos da Universidade " << nome << " (fim -> inicio):" << std::endl;
     while (aux != nullptr) {
-        std::cout << "O Departamento " << aux->getDepartamento()->getNome() << " faz parte da Universidade " << nome << std::endl;
+        std::cout << aux->getDepartamento()->getNome() << " faz parte da Universidade " << nome << std::endl;
         aux = aux->getAnte();
     }
     std::cout << std::endl;
