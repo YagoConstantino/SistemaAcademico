@@ -129,7 +129,6 @@ void Principal::CalcIdade()
 
 void Principal::listaDepartamento()
 {
-	printf("Departamentos e Professores da UTFPR\n");
 	UTFPR.listaDepartInicial();
 	UTFPR.listaProfessorInicial();
 	system("pause");
