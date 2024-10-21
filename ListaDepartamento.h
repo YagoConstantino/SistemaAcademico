@@ -16,4 +16,6 @@ public:
 	bool removeDepart(Departamento* dp);
 	void listaDepartInicial();
 	void listaDepartFinal();
+
+	Departamento* buscaDepart(std::string& nome);
 };

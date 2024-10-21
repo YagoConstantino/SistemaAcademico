@@ -88,3 +88,15 @@ void ListaDisciplina::listeDisciplinasFinal()
     }
     printf("\n");
 }
+
+Disciplina* ListaDisciplina::buscaDisicplina(std::string& nome)
+{
+    ElDisciplina* aux = pDisciplinaPrim;
+
+    while (aux != nullptr && aux->getDisciplina()->getNome() != nome)
+    {
+        aux = aux->getProx();
+    }
+    if (aux == nullptr) return nullptr;
+    return aux->getDisciplina();
+}

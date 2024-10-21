@@ -95,3 +95,16 @@ void ListaDepartamento::listaDepartFinal() {
     std::cout << std::endl;
 }
 
+Departamento* ListaDepartamento::buscaDepart(std::string& nome)
+{
+    ElDepartamento* aux = pDepartPrim;
+
+    while (aux != nullptr && aux->getDepartamento()->getNome() != nome)
+    {
+        aux = aux->getProx();
+
+    }
+    if (aux == nullptr) return nullptr;
+    return aux->getDepartamento();
+}
+

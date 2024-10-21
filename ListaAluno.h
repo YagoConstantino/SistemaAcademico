@@ -24,4 +24,6 @@ public:
 
 	ElAluno* getAlunoPrim() { return pAlunoPrim; }
 
+	Aluno* buscaAluno(std::string& nome);
+
 };

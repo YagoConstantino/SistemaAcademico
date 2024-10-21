@@ -17,4 +17,6 @@ public:
 
 	void listeProfessoresInicio();
 	void listeProfessoresFinal();
+
+	Professor* buscaProfessor(std::string& nome);
 };

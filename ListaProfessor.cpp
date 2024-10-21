@@ -103,3 +103,16 @@ void ListaProfessor::listeProfessoresFinal()
     }
     std::cout << std::endl;
 }
+
+Professor* ListaProfessor::buscaProfessor(std::string& nome)
+{
+    ElProfessor* aux = pProfessorPrim;
+
+    while (aux != nullptr && aux->getProfessor()->getNome() != nome)
+    {
+        aux = aux->getProx();
+    }
+
+    if (aux == nullptr) return nullptr;
+    return aux->getProfessor();
+}

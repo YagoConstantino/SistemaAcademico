@@ -17,4 +17,6 @@ public:
 
 	void listeDisciplinasInicio();
 	void listeDisciplinasFinal();
+
+	Disciplina* buscaDisicplina(std::string& nome);
 };

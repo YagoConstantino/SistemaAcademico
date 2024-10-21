@@ -96,3 +96,14 @@ void ListaAluno::listarAlunosFinal() {
     }
     std::cout << std::endl;
 }
+
+Aluno* ListaAluno::buscaAluno(std::string& nome)
+{
+    ElAluno* aux = pAlunoPrim;
+    while (aux != nullptr && aux->getAluno()->getNome() != nome)
+    {
+        aux = aux->getProx();
+    }
+    if (aux == nullptr) return nullptr;
+    return aux->getAluno();
+}

@@ -16,4 +16,6 @@ public:
 
 	void listaUniversidadeInicio();
 	void listaUniversidadeFinal();
+
+	Universidade* buscaUniv(std::string& nome);
 };
