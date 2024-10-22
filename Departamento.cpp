@@ -51,9 +51,9 @@ bool Departamento::excluiProfessor(Professor* pr)
 }
 
 void Departamento::listeProfessoresInicio() {
-    objListaProfessor->listeProfessoresInicio(nome);
+    objListaProfessor->listeProfessoresInicio();
 }
 
 void Departamento::listeProfessoresFinal() {
-    objListaProfessor->listeProfessoresFinal(nome);
+    objListaProfessor->listeProfessoresFinal();
 }

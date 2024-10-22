@@ -114,12 +114,11 @@ void Menu::MenuCriacao()
 
 void Menu::MenuExecuta()
 {
-	string nula = " ";
 	objListaUniversidade->listaUniversidadeInicio();
-	objListaAluno->listarAlunosInicio(nula);
-	objListaDepartamento->listaDepartInicial(nula);
+	objListaAluno->listarAlunosInicio();
+	objListaDepartamento->listaDepartInicial();
 	objListaDisciplina->listeDisciplinasInicio();
-	objListaProfessor->listeProfessoresInicio(nula);
+	objListaProfessor->listeProfessoresInicio();
 
 }
 

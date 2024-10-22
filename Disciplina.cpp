@@ -30,11 +30,11 @@ bool Disciplina::excluirAluno(Aluno* pa) {
 }
 
 void Disciplina::listarAlunosInicio() {
-    objListaAluno->listarAlunosInicio(nome);
+    objListaAluno->listarAlunosInicio();
 }
 
 void Disciplina::listarAlunosFinal() {
-    objListaAluno->listarAlunosFinal(nome);
+    objListaAluno->listarAlunosFinal();
 }
 
 ElAluno* Disciplina::getAlunoPrim()

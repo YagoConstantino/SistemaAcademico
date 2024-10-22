@@ -19,8 +19,8 @@ public:
 	bool incluirAluno(Aluno* pa);
 	bool excluirAluno(Aluno* pa);
 
-	void listarAlunosInicio(std::string& nome);
-	void listarAlunosFinal(std::string& nome);
+	void listarAlunosInicio();
+	void listarAlunosFinal();
 
 	Aluno* buscaAluno(std::string& nome);
 

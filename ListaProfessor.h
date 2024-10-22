@@ -15,8 +15,8 @@ public:
 	bool incluiProfessor(Professor* pr);
 	bool excluiProfessor(Professor* pr);
 
-	void listeProfessoresInicio(std::string& nome);
-	void listeProfessoresFinal(std::string& nome);
+	void listeProfessoresInicio();
+	void listeProfessoresFinal();
 
 	ElProfessor* getPprim() { return pProfessorPrim; }
 	Professor* buscaProfessor(std::string& nome);

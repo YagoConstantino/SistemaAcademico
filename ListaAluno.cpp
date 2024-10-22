@@ -75,23 +75,26 @@ bool ListaAluno::excluirAluno(Aluno* pa) {
     return true;
 }
 
-void ListaAluno::listarAlunosInicio(std::string& nome) {
+void ListaAluno::listarAlunosInicio() {
     ElAluno* aux = pAlunoPrim;
-    std::cout << "Alunos da disciplina " << nome << " (inicio -> fim):" << std::endl;
+    
 
     while (aux != nullptr) {
         std::cout << " - " << aux->getAluno()->getNome() << std::endl;
+        std::cout << "Disciplinas do Aluno :" << std::endl;
+        aux->getAluno()->listeDisciplinasInicio();
         aux = aux->getProx();
     }
     std::cout << std::endl;
 }
 
-void ListaAluno::listarAlunosFinal(std::string& nome) {
+void ListaAluno::listarAlunosFinal() {
     ElAluno* aux = pAlunoAtual;
-    std::cout << "Alunos da disciplina " << nome << " (fim -> inicio):" << std::endl;
 
     while (aux != nullptr) {
         std::cout << " - " << aux->getAluno()->getNome() << std::endl;
+        std::cout << "Disciplinas do Aluno :" << std::endl;
+        aux->getAluno()->listeDisciplinasInicio();
         aux = aux->getAnte();
     }
     std::cout << std::endl;

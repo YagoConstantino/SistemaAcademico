@@ -42,12 +42,12 @@ bool Universidade::removeDepart(Departamento* dp)
 
 void Universidade::listaDepartInicial()
 {
-    objListaDepartamento->listaDepartInicial(nome);
+    objListaDepartamento->listaDepartInicial();
 }
 
 void Universidade::listaDepartFinal()
 {
-    objListaDepartamento->listaDepartFinal(nome);
+    objListaDepartamento->listaDepartFinal();
 }
 
 bool Universidade::incluiProfessor(Professor* pr) 
@@ -66,10 +66,10 @@ bool Universidade::removeProfessor(Professor* pr)
 
 void Universidade::listaProfessorInicial() {
     
-    objListaProfessor->listeProfessoresInicio(nome);
+    objListaProfessor->listeProfessoresInicio();
 }
 
 void Universidade::listaProfessorFinal()
 {
-    objListaProfessor->listeProfessoresFinal(nome);
+    objListaProfessor->listeProfessoresFinal();
 }

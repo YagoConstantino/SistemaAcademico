@@ -70,23 +70,23 @@ bool ListaDepartamento::removeDepart(Departamento* dp) {
     return true;
 }
 
-void ListaDepartamento::listaDepartInicial(std::string& nome) {
+void ListaDepartamento::listaDepartInicial() {
     ElDepartamento* aux = pDepartPrim;
 
-    std::cout << "Departamentos da Universidade " << nome << " (inicio -> fim):" << std::endl;
+    std::cout << "Departamentos da "<< " (inicio -> fim):" << std::endl;
     while (aux != nullptr) {
-        std::cout << aux->getDepartamento()->getNome() << " faz parte da Universidade " << nome << std::endl;
+        std::cout << aux->getDepartamento()->getNome() << " faz parte da "<<   std::endl;
         aux = aux->getProx();
     }
     std::cout << std::endl;
 }
 
-void ListaDepartamento::listaDepartFinal(std::string& nome) {
+void ListaDepartamento::listaDepartFinal() {
     ElDepartamento* aux = pDepartAtual;
 
-    std::cout << "Departamentos da Universidade " << nome << " (fim -> inicio):" << std::endl;
+    std::cout << "Departamentos da " <<  " (fim -> inicio):" << std::endl;
     while (aux != nullptr) {
-        std::cout << aux->getDepartamento()->getNome() << " faz parte da Universidade " << nome << std::endl;
+        std::cout << aux->getDepartamento()->getNome() << " faz parte da " << std::endl;
         aux = aux->getAnte();
     }
     std::cout << std::endl;

@@ -78,10 +78,10 @@ bool ListaProfessor::excluiProfessor(Professor* pr)
     return true;
 }
 
-void ListaProfessor::listeProfessoresInicio(std::string& nome)
+void ListaProfessor::listeProfessoresInicio()
 {
     ElProfessor* aux = pProfessorPrim;
-    std::cout << "Professores do Departamento " << nome << " (inicio -> fim):" << std::endl;
+ 
     while (aux != nullptr) {
         std::cout << "Professor: " << aux->getProfessor()->getNome()<<" Do "<<
         aux->getProfessor()->getDepart()->getNome()<< std::endl;
@@ -90,10 +90,10 @@ void ListaProfessor::listeProfessoresInicio(std::string& nome)
     std::cout << std::endl;
 }
 
-void ListaProfessor::listeProfessoresFinal(std::string& nome)
+void ListaProfessor::listeProfessoresFinal()
 {
     ElProfessor* aux = pProfessorPrim;
-    std::cout << "Professores do Departamento " << nome << " (inicio -> fim):" << std::endl;
+
     while (aux != nullptr) {
         std::cout << "Professor: " << aux->getProfessor()->getNome() << " Do "  <<
         aux->getProfessor()->getDepart()->getNome() << std::endl;

@@ -1,6 +1,1 @@
-﻿  Menu.cpp
-  Principal.cpp
-C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Principal.cpp(6,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Universidade.cpp
-  Gerando Código...
-  SistemaAcademicoV4.vcxproj -> C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\x64\Debug\SistemaAcademicoV4.exe
+﻿  SistemaAcademicoV4.vcxproj -> C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\x64\Debug\SistemaAcademicoV4.exe
