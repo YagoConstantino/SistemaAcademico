@@ -19,7 +19,7 @@ ListaAluno::~ListaAluno() {
 
 bool ListaAluno::incluirAluno(Aluno* pa) {
     if (contAlunos >= numeroAlunos) {
-        std::cout << "Disciplina cheia! Não é possível adicionar mais alunos." << std::endl;
+        std::cout << "Disciplina cheia! Nao é possível adicionar mais alunos." << std::endl;
         return false;
     }
 
@@ -50,7 +50,7 @@ bool ListaAluno::excluirAluno(Aluno* pa) {
 
     if (aux == nullptr) 
     {
-        std::cout << "Aluno não encontrado." << std::endl;
+        std::cout << "Aluno nao encontrado." << std::endl;
         return false;
     }
 
@@ -109,6 +109,6 @@ Aluno* ListaAluno::buscaAluno(std::string& nome)
         if (aux->getAluno()->getNome() == nome) return aux->getAluno();
         else aux = aux->getProx();
     }
-    std::cout << "Não encontrado o Aluno" << std::endl;
+    std::cout << "Nao encontrado o Aluno" << std::endl;
     return nullptr;
 }

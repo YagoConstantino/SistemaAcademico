@@ -239,7 +239,7 @@ void Menu::CadAluno()
 			pAluno->setDepartamento(pDepart);
 			pAluno->setUniversidade(pUniversidade);
 			pAluno->calcIdade(diaAT, mesAT, anoAT);
-			objListaAluno->excluirAluno(pAluno);
+			objListaAluno->incluirAluno(pAluno);
 
 			pAluno->setRa(ra);
 
