@@ -18,7 +18,7 @@ Menu::Menu()
 	diaAT = st.wDay;
 	mesAT = st.wMonth;
 	anoAT = st.wYear;
-	MenuPrin();
+	Executar();
 }
 
 Menu::~Menu()
@@ -30,256 +30,404 @@ Menu::~Menu()
 	delete objListaUniversidade;
 }
 
+void Menu::CadUniversidade()
+{
+	string nome;
+	Universidade* puniv = nullptr;
+
+	cout << "Qual o nome da Universidade ?" << endl;
+	cin >> nome;
+
+	puniv = new Universidade(nome);
+	puniv->setNome(nome);
+	objListaUniversidade->incluiUniversidade(puniv);
+
+}
+
+void Menu::CadDepartamento()
+{
+	string nomeUniversidade;
+	string nomeDepartamento;
+	Universidade* pUniv = nullptr;
+	Departamento* pDepart = nullptr;
+
+	objListaUniversidade->listaUniversidadeInicio();
+
+	cout << "Qual o nome da Universidade do novo Departamento ?" << endl;
+	cin >> nomeUniversidade;
+	pUniv = objListaUniversidade->buscaUniv(nomeUniversidade);
+
+	if (pUniv != nullptr)
+	{
+		cout << "Qual o nome do Departamento ?" << endl;
+		cin >> nomeDepartamento;
+
+		pDepart = new Departamento();
+		pDepart->setNome(nomeDepartamento);
+		pDepart->setUniversidade(pUniv);
+		objListaDepartamento->incluiDepart(pDepart);
+		pUniv->incluiDepart(pDepart);
+
+	}
+	else
+	{
+		cout << "Universidade inexistente" << endl;
+	}
+
+}
+
+void Menu::CadDisciplina()
+{
+	string nomeDisciplina;
+	string nomeUniversidade;
+	string nomeDepartamento;
+	string areaDeConhecimneto;
+
+	Disciplina* pDisciplina = nullptr;
+	Universidade* pUniversidade = nullptr;
+	Departamento* pDepart = nullptr;
+
+	objListaUniversidade->listaUniversidadeInicio();
+
+	cout << "Qual o nome da Universidade da nova Disciplina ?" << endl;
+	cin >> nomeUniversidade;
+
+	pUniversidade = objListaUniversidade->buscaUniv(nomeUniversidade);
+
+	if (pUniversidade != nullptr)
+	{
+		objListaDepartamento->listaDepartInicial();
+		cout << "Qual o nome do Departamento dessa Disciplina ?" << endl;
+		cin >> nomeDepartamento;
+
+		pDepart = objListaDepartamento->buscaDepartamento(nomeDepartamento);
+
+		if (pDepart != nullptr)
+		{
+			cout << "Qual o nome da Disciplina a ser cadastrada ?" << endl;
+			cin >> nomeDisciplina;
+
+			cout << "Qual a area de conhecimento da Disciplina a ser cadastrada ?" << endl;
+			cin >> areaDeConhecimneto;
+
+
+			pDisciplina = new Disciplina();
+			pDisciplina->setNome(nomeDisciplina);
+			pDisciplina->setArea(areaDeConhecimneto);
+			pDisciplina->setDepartamento(pDepart);
+			
+
+			pDepart->incluiDisciplina(pDisciplina);
+			objListaDisciplina->incluiDisciplina(pDisciplina);
+		}
+		else
+		{
+			cout << "Departamento Invalido" << endl;
+		}
+	}
+	else
+	{
+		cout << "Universidade invalida" << endl;
+	}
+
+
+}
+
+void Menu::CadProfessor()
+{
+	string nomeProfessor;
+	string nomeUniversidade;
+	string nomeDepartamento;
+
+	Professor* pProf = nullptr;
+	Universidade* pUniv = nullptr;
+	Departamento* pDepart = nullptr;
+	int dia = 0, mes = 0, ano = 0;
+
+	objListaUniversidade->listaUniversidadeInicio();
+
+	cout << "Qual o nome da Universidade que esse Professor trabalha ?" << endl;
+	cin >> nomeUniversidade;
+
+	pUniv = objListaUniversidade->buscaUniv(nomeUniversidade);
+
+	if (pUniv != nullptr)
+	{
+		objListaDepartamento->listaDepartInicial();
+
+		cout << "Qual o nome do Departamento onde esse Professor Trabalha ?" << endl;
+		cin >> nomeDepartamento;
+
+		pDepart = objListaDepartamento->buscaDepartamento(nomeDepartamento);
+
+		if (pDepart != nullptr)
+		{
+			cout << "Qual o nome do Professor a ser cadastrado ?" << endl;
+			cin >> nomeProfessor;
+
+			cout << "Qual a data de Nascimento do Professor ? dd//mm/aaaa" << endl;
+			cin >> dia >> mes >> ano;
+
+			pProf = new Professor(dia, mes, ano);
+			pProf->setNome(nomeProfessor);
+			pProf->setDepartamento(pDepart);
+			pProf->setUniv(pUniv);
+			pProf->calcIdade(diaAT, mesAT, anoAT);
+
+			objListaProfessor->incluiProfessor(pProf);
+
+			pDepart->incluiProfessor(pProf);
+			pUniv->incluiProfessor(pProf);
+		}
+		else
+		{
+			cout << "Departamento inválido" << endl;
+		}
+
+	}
+	else
+	{
+		cout << "Universidade Invalida" << endl;
+	}
+
+}
+
+void Menu::CadAluno()
+{
+	string nomeAluno;
+	string nomeUniversidade;
+	string nomeDepart;
+	string nomeDisciplina;
+
+	Aluno* pAluno = nullptr;
+	Universidade* pUniversidade = nullptr;
+	Departamento* pDepart = nullptr;
+	Disciplina* pDisciplina = nullptr;
+
+	int dia = 0, mes = 0, ano = 0;
+	int ra = -1;
+
+	objListaUniversidade->listaUniversidadeInicio();
+
+	cout << "Qual o nome da Universidade que esse Aluno Estuda  ?" << endl;
+	cin >> nomeUniversidade;
+
+	pUniversidade = objListaUniversidade->buscaUniv(nomeUniversidade);
+
+	if (pUniversidade != nullptr)
+	{
+		objListaDepartamento->listaDepartInicial();
+
+		cout << "Qual o nome do Departamento onde esse Aluno Estuda ?" << endl;
+		cin >> nomeDepart;
+
+		pDepart = objListaDepartamento->buscaDepartamento(nomeDepart);
+
+		if (pDepart != nullptr)
+		{
+			cout << "Qual o nome do Aluno a ser cadastrado ?" << endl;
+			cin >> nomeAluno;
+
+			cout << "Qual a data de Nascimento do Aluno ? dd//mm/aaaa" << endl;
+			cin >> dia >> mes >> ano;
+
+			cout << "Qual o Registro Academido desse Aluno ?" << endl;
+			cin >> ra;
+
+			pAluno = new Aluno(dia, mes, ano);
+			pAluno->setNome(nomeAluno);
+			pAluno->setDepartamento(pDepart);
+			pAluno->setUniversidade(pUniversidade);
+			pAluno->calcIdade(diaAT, mesAT, anoAT);
+			objListaAluno->excluirAluno(pAluno);
+
+			pAluno->setRa(ra);
+
+			while (true)
+			{
+				objListaDisciplina->listeDisciplinasInicio();
+
+				cout << "Digite o nome da disciplina que o Aluno deseja cadastrar (ou 'sair' para encerrar): ";
+				cin >> nomeDisciplina;
+
+				if (nomeDisciplina == "sair")
+				{
+					break;
+				}
+
+				pDisciplina = objListaDisciplina->buscaDisciplina(nomeDisciplina);
+
+				if (pDisciplina != nullptr)
+				{
+
+					pDisciplina->incluirAluno(pAluno);
+					pAluno->incluiDisciplina(pDisciplina);
+				}
+				else
+				{
+					cout << "Disciplina não encontrada." << endl;
+				}
+
+			}
+		}
+		else
+		{
+			cout << "Departamento inválido" << endl;
+		}
+
+	}
+	else
+	{
+		cout << "Universidade Invalida" << endl;
+	}
+
+}
+
+
 void Menu::MenuPrin()
 {
 	int op = -1;
 
-	while (op != 0)
+	while (op != 3)
 	{
-		cout << "Qual Menu voce deseja" << endl;
-		cout << "Digite 1 para Menu de Criacao" << endl;
-		cout << "Digite 2 para Menu de Execucao " << endl;
-		cout << "Digite 0 para encerrar o Programa" << endl;
-
+		system("cls");
+		cout << "Informe sua opcao :" << endl;
+		cout << "1 Cadastrar" << endl;
+		cout << "2 Executar " << endl;
+		cout << "3 Sair" << endl;
 		cin >> op;
+
 		switch (op)
 		{
 		case 1:
-			MenuCriacao();
-			break;
+		{
+			MenuCad();
+		}
+		break;
 
 		case 2:
-			MenuExecuta();
-			break;
+		{
+			MenuExe();
+		}
+		break;
 
-		case 0:
-			cout << "Encerrando.....\n" << endl;
-			break;
+		case 3:
+		{
+			cout << "FIM" << endl;
+		}
+		break;
 
 		default:
-			cout << "Valor inválido tente Novamente....\n";
-			break;
-
+		{
+			cout << "Opcao Invalida" << endl;
+			system("pause");
+		}
+		break;
 		}
 	}
 }
 
-void Menu::MenuCriacao()
+void Menu::MenuCad()
 {
 	int op = -1;
-
-	while (op != 0)
+	while (op != 6)
 	{
-		cout << "Que tipo de objeto deseja criar:" << endl;
-		cout << "Digite 1 para Universidade " << endl;
-		cout << "Digite 2 para Departamento " << endl;
-		cout << "Digite 3 para Disciplina " << endl;
-		cout << "Digite 4 para Professor " << endl;
-		cout << "Digite 5 para Aluno " << endl;
+		cout << "Informe sua opcao :" << endl;
+		cout << "1 Cadastrar Universidade" << endl;
+		cout << "2 Cadastrar Departamento " << endl;
+		cout << "3 Cadastrar Disciplina" << endl;
+		cout << "4 Cadastrar Professor" << endl;
+		cout << "5 Cadastrar Aluno" << endl;
+		cout << "6 Sair" << endl;
 		cin >> op;
+
 		switch (op)
 		{
 		case 1:
-			criaUniv();
+			CadUniversidade();
 			break;
 
 		case 2:
-			criaDepart();
+			CadDepartamento();
 			break;
 
 		case 3:
-			criaDisciplina();
+			CadDisciplina();
 			break;
 
 		case 4:
-			criaProfessor();
+			CadProfessor();
 			break;
 
 		case 5:
-			criaAluno();
+			CadAluno();
 			break;
 
-		case 0:
-			cout << "Saindo do Menu.....\n" << endl;
+		case 6:
+			cout << "FIM" << endl;
 			break;
 
 		default:
-			cout << "Valor inválido tente Novamente....\n";
-			break;
+			cout << "Valor invalido" << endl;
+			system("pause");
 
 		}
+
+
 	}
-
 }
 
-void Menu::MenuExecuta()
+void Menu::MenuExe()
 {
-	objListaUniversidade->listaUniversidadeInicio();
-	objListaAluno->listarAlunosInicio();
-	objListaDepartamento->listaDepartInicial();
-	objListaDisciplina->listeDisciplinasInicio();
-	objListaProfessor->listeProfessoresInicio();
-
-}
-
-
-void Menu::criaUniv()
-{
-	string nome;
-	cout << "Qual o nome da Universidade que voce deseja Cadastrar ?" << endl;
-	cin >> nome;
-	Universidade* novaUniversidade = new Universidade();
-	novaUniversidade->setNome(nome);
-
-	objListaUniversidade->incluiUniversidade(novaUniversidade);
-
-}
-
-void Menu::criaDepart()
-{
-	string nome;
-	cout << "Qual o nome do Departamento que voce deseja Cadastrar ?" << endl;
-	cin >> nome;
-	Departamento* novoDepartamento = new Departamento();
-	novoDepartamento->setNome(nome);
-
-	objListaDepartamento->incluiDepart(novoDepartamento);
-
-	string univ;
-	cout << "Em Qual Universidade está cadastrado esse Departamento ?" << endl;
-	cin >> univ;
-
-	Universidade* universidade = objListaUniversidade->buscaUniv(univ);
-
-	if (universidade)universidade->incluiDepart(novoDepartamento);
-
-
-}
-
-void Menu::criaDisciplina()
-{
-	string nome;
-	string area;
-	int ID;
-	cout << "Qual o nome da Disciplina que voce deseja Cadastrar ?" << endl;
-	cin >> nome;
-	cout << "Qual a area de conhecimento da Disciplina ?" << endl;
-	cin >> area;
-	cout << "Qual o ID ?" << endl;
-	cin >> ID;
-
-	Disciplina* novaDisciplina = new Disciplina();
-	novaDisciplina->setNome(nome);
-	novaDisciplina->setArea(area);
-	novaDisciplina->setID(ID);
-
-	string depart;
-	cout << "A Qual departamento essa Disciplina pertence ?" << endl;
-	cin >> depart;
-
-	Departamento* dp = objListaDepartamento->buscaDepartamento(depart);
-	if (dp) dp->incluiDisciplina(novaDisciplina);
-
-}
-
-void Menu::criaProfessor() const
-{
-	string nome;
-	int dia, mes, ano;
-	int ID;
-
-	cout << "Qual o nome do Professor que será cadastrado ?" << endl;
-	cin >> nome;
-	cout << "Qual a data de nascimento do Novo Professor ?" << endl;
-	cin >> dia >> mes >> ano;
-	cout << "Qual o ID do Professor ?" << endl;
-	cin >> ID;
-
-	Professor* novoProfessor = new Professor(dia, mes, ano);
-	novoProfessor->calcIdade(diaAT,mesAT,anoAT);
-	novoProfessor->setNome(nome);
-	novoProfessor->setID(ID);
-
-	string univ;
-	cout << "Em Qual Universidade está cadastrado esse Professor ?" << endl;
-	cin >> univ;
-
-	Universidade* universidade = objListaUniversidade->buscaUniv(univ);
-
-	if (universidade)universidade->incluiProfessor(novoProfessor);
-
-	string depart;
-	cout << "A Qual departamento esse Professor pertence ?" << endl;
-	cin >> depart;
-
-	Departamento* dp = objListaDepartamento->buscaDepartamento(depart);
-	if (dp) dp->incluiProfessor(novoProfessor);
-}
-
-void Menu::criaAluno()
-{
-	string nome;
-	int dia, mes, ano;
-	int ID;
-	int RA;
-
-	cout << "Qual o nome do Aluno que será cadastrado ?" << endl;
-	cin >> nome;
-	cout << "Qual a data de nascimento do Novo Aluno ?" << endl;
-	cin >> dia >> mes >> ano;
-	cout << "Qual o ID do Aluno ?" << endl;
-	cin >> ID;
-	cout << "Qual o RA do Aluno ?" << endl;
-	cin >> RA;
-
-	Aluno* novoALuno = new Aluno(dia, mes, ano);
-	novoALuno->setNome(nome);
-	novoALuno->setID(ID);
-	novoALuno->setRa(RA);
-
-	string univ;
-	cout << "Em Qual Universidade está cadastrado esse Aluno ?" << endl;
-	cin >> univ;
-
-	Universidade* universidade = objListaUniversidade->buscaUniv(univ);
-
-	if (universidade)novoALuno->setUniversidade(universidade);
-
-	string depart;
-	cout << "A Qual departamento esse Aluno pertence ?" << endl;
-	cin >> depart;
-
-	Departamento* dp = objListaDepartamento->buscaDepartamento(depart);
-	if (dp) novoALuno->setDepartamento(dp);
-
 	int op = -1;
-
-	while (op != 0)
+	while (op != 6)
 	{
-		string disciplina;
-		cout << "Deseja cadastrar esse Aluno em alguma disciplina ?" << endl;
-		cout << "1 SIM" << endl;
-		cout << "0 Nao" << endl;
+		cout << "Informe sua opcao :" << endl;
+		cout << "1 Listar Universidades" << endl;
+		cout << "2 Listar Departamentos " << endl;
+		cout << "3 Listar Disciplinas" << endl;
+		cout << "4 Listar Professores" << endl;
+		cout << "5 Listar Alunos" << endl;
+		cout << "6 Sair" << endl;
 		cin >> op;
 
 		switch (op)
 		{
 		case 1:
-			cout << "Qual o nome da Disciplina ?" << endl;
-			cin >> disciplina;
-			objListaDisciplina->buscaDisciplina(disciplina)->incluirAluno(novoALuno);
+			objListaUniversidade->listaUniversidadeInicio();
 			break;
-		case 0:
-			cout << "Encerrando Cadastro de Disciplinas....." << endl;
-			MenuPrin();
+
+		case 2:
+			objListaDepartamento->listaDepartInicial();
+			break;
+
+		case 3:
+			objListaDisciplina->listeDisciplinasInicio();
+			break;
+
+		case 4:
+			objListaProfessor->listeProfessoresInicio();
+			break;
+
+		case 5:
+			objListaAluno->listarAlunosInicio();
+			break;
+
+		case 6:
+			cout << "FIM" << endl;
 			break;
 
 		default:
-			cout << "Opção inválida,digite 1 ou 0....." << endl;
-			break;
+			cout << "Valor invalido" << endl;
+			system("pause");
+
 		}
+
+
 	}
 }
 
-
-
+void Menu::Executar()
+{
+	MenuPrin();
+}

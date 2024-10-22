@@ -21,16 +21,17 @@ public:
 	Menu();
 	~Menu();
 
-	void MenuPrin();
-	void MenuCriacao();
-	void MenuExecuta();
-	
+	void CadUniversidade();
+	void CadDepartamento();
+	void CadDisciplina();
+	void CadProfessor();
+	void CadAluno();
 
-	void criaUniv();
-	void criaDepart();
-	void criaDisciplina();
-	void criaProfessor() const;
-	void criaAluno();
+	void MenuPrin();
+	void MenuCad();
+	void MenuExe();
+
+	void Executar();
 
 
 	
