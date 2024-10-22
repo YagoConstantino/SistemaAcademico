@@ -102,13 +102,13 @@ void ListaProfessor::listeProfessoresFinal(std::string& nome)
     std::cout << std::endl;
 }
 
-ElProfessor* ListaProfessor::buscaProfessor(std::string& nome)
+Professor* ListaProfessor::buscaProfessor(std::string& nome)
 {
     ElProfessor* aux = pProfessorPrim;
 
     while (aux != nullptr)
     {
-        if (aux->getProfessor()->getNome() == nome) return aux;
+        if (aux->getProfessor()->getNome() == nome) return aux->getProfessor();
         else aux = aux->getProx();
     }
     std::cout << "Não encontrado o Professor" << std::endl;

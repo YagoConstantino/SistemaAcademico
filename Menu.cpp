@@ -150,7 +150,7 @@ void Menu::criaDepart()
 	cout << "Em Qual Universidade está cadastrado esse Departamento ?" << endl;
 	cin >> univ;
 
-	Universidade* universidade = objListaUniversidade->buscaUniv(univ)->getUniv();
+	Universidade* universidade = objListaUniversidade->buscaUniv(univ);
 
 	if (universidade)universidade->incluiDepart(novoDepartamento);
 
@@ -178,7 +178,7 @@ void Menu::criaDisciplina()
 	cout << "A Qual departamento essa Disciplina pertence ?" << endl;
 	cin >> depart;
 
-	Departamento* dp = objListaDepartamento->buscaDepartamento(depart)->getDepartamento();
+	Departamento* dp = objListaDepartamento->buscaDepartamento(depart);
 	if (dp) dp->incluiDisciplina(novaDisciplina);
 
 }
@@ -205,7 +205,7 @@ void Menu::criaProfessor() const
 	cout << "Em Qual Universidade está cadastrado esse Professor ?" << endl;
 	cin >> univ;
 
-	Universidade* universidade = objListaUniversidade->buscaUniv(univ)->getUniv();
+	Universidade* universidade = objListaUniversidade->buscaUniv(univ);
 
 	if (universidade)universidade->incluiProfessor(novoProfessor);
 
@@ -213,7 +213,7 @@ void Menu::criaProfessor() const
 	cout << "A Qual departamento esse Professor pertence ?" << endl;
 	cin >> depart;
 
-	Departamento* dp = objListaDepartamento->buscaDepartamento(depart)->getDepartamento();
+	Departamento* dp = objListaDepartamento->buscaDepartamento(depart);
 	if (dp) dp->incluiProfessor(novoProfessor);
 }
 
@@ -242,7 +242,7 @@ void Menu::criaAluno()
 	cout << "Em Qual Universidade está cadastrado esse Aluno ?" << endl;
 	cin >> univ;
 
-	Universidade* universidade = objListaUniversidade->buscaUniv(univ)->getUniv();
+	Universidade* universidade = objListaUniversidade->buscaUniv(univ);
 
 	if (universidade)novoALuno->setUniversidade(universidade);
 
@@ -250,7 +250,7 @@ void Menu::criaAluno()
 	cout << "A Qual departamento esse Aluno pertence ?" << endl;
 	cin >> depart;
 
-	Departamento* dp = objListaDepartamento->buscaDepartamento(depart)->getDepartamento();
+	Departamento* dp = objListaDepartamento->buscaDepartamento(depart);
 	if (dp) novoALuno->setDepartamento(dp);
 
 	int op = -1;
@@ -268,7 +268,7 @@ void Menu::criaAluno()
 		case 1:
 			cout << "Qual o nome da Disciplina ?" << endl;
 			cin >> disciplina;
-			objListaDisciplina->buscaDisciplina(disciplina)->getDisciplina()->incluirAluno(novoALuno);
+			objListaDisciplina->buscaDisciplina(disciplina)->incluirAluno(novoALuno);
 			break;
 		case 0:
 			cout << "Encerrando Cadastro de Disciplinas....." << endl;

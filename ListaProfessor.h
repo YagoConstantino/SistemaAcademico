@@ -19,5 +19,5 @@ public:
 	void listeProfessoresFinal(std::string& nome);
 
 	ElProfessor* getPprim() { return pProfessorPrim; }
-	ElProfessor* buscaProfessor(std::string& nome);
+	Professor* buscaProfessor(std::string& nome);
 };

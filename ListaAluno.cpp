@@ -97,13 +97,13 @@ void ListaAluno::listarAlunosFinal(std::string& nome) {
     std::cout << std::endl;
 }
 
-ElAluno* ListaAluno::buscaAluno(std::string& nome)
+Aluno* ListaAluno::buscaAluno(std::string& nome)
 {
     ElAluno* aux = pAlunoPrim;
 
     while (aux != nullptr)
     {
-        if (aux->getAluno()->getNome() == nome) return aux;
+        if (aux->getAluno()->getNome() == nome) return aux->getAluno();
         else aux = aux->getProx();
     }
     std::cout << "Não encontrado o Aluno" << std::endl;

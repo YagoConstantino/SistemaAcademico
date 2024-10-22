@@ -1,9 +1,6 @@
 ﻿  Menu.cpp
-C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Menu.cpp(303,9): error C2360: inicialização de 'disciplinaObj' é ignorado por rótulo 'case'
-      C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Menu.cpp(295,25):
-      consulte a declaração de 'disciplinaObj'
-  
-C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Menu.cpp(306,9): error C2361: inicialização de 'disciplinaObj' é ignorada por rótulo 'default'
-      C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Menu.cpp(295,25):
-      consulte a declaração de 'disciplinaObj'
-  
+  Principal.cpp
+C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Principal.cpp(6,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Universidade.cpp
+  Gerando Código...
+  SistemaAcademicoV4.vcxproj -> C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\x64\Debug\SistemaAcademicoV4.exe

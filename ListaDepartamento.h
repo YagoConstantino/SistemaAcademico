@@ -18,5 +18,5 @@ public:
 	void listaDepartFinal(std::string& nome);
 
 	ElDepartamento* getPprim() { return pDepartPrim; }
-	ElDepartamento* buscaDepartamento(std::string& nome);
+	Departamento* buscaDepartamento(std::string& nome);
 };

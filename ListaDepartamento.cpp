@@ -92,13 +92,13 @@ void ListaDepartamento::listaDepartFinal(std::string& nome) {
     std::cout << std::endl;
 }
 
-ElDepartamento* ListaDepartamento::buscaDepartamento(std::string& nome)
+Departamento* ListaDepartamento::buscaDepartamento(std::string& nome)
 {
     ElDepartamento* aux = pDepartPrim;
 
     while (aux != nullptr)
     {
-        if (aux->getDepartamento()->getNome() == nome) return aux;
+        if (aux->getDepartamento()->getNome() == nome) return aux->getDepartamento();
         else aux = aux->getProx();
     }
     std::cout << "Não encontrado o Departamento" << std::endl;

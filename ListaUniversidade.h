@@ -18,5 +18,5 @@ public:
 	void listaUniversidadeFinal();
 
 	ElUniversidade* getpPrim() { return pPrim; }
-	ElUniversidade* buscaUniv(std::string& nome);
+	Universidade* buscaUniv(std::string& nome);
 };

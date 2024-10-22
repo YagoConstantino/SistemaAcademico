@@ -102,13 +102,13 @@ void ListaUniversidade::listaUniversidadeFinal()
 	}
 }
 
-ElUniversidade* ListaUniversidade::buscaUniv(std::string& nome)
+Universidade* ListaUniversidade::buscaUniv(std::string& nome)
 {
 	ElUniversidade* aux = pPrim;
 
 	while (aux != nullptr)
 	{
-		if (aux->getUniv()->getNome() == nome) return aux;
+		if (aux->getUniv()->getNome() == nome) return aux->getUniv();
 		else aux = aux->getProx();
 	}
 	std::cout << "Não encontrado a Universidade" << std::endl;
