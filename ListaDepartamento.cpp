@@ -75,7 +75,7 @@ void ListaDepartamento::listaDepartInicial() {
 
     std::cout << "Departamentos da "<< " (inicio -> fim):" << std::endl;
     while (aux != nullptr) {
-        std::cout << aux->getDepartamento()->getNome() << " faz parte da "<<   std::endl;
+        std::cout << aux->getDepartamento()->getNome() <<   std::endl;
         aux = aux->getProx();
     }
     std::cout << std::endl;
@@ -86,7 +86,7 @@ void ListaDepartamento::listaDepartFinal() {
 
     std::cout << "Departamentos da " <<  " (fim -> inicio):" << std::endl;
     while (aux != nullptr) {
-        std::cout << aux->getDepartamento()->getNome() << " faz parte da " << std::endl;
+        std::cout << aux->getDepartamento()->getNome()<< std::endl;
         aux = aux->getAnte();
     }
     std::cout << std::endl;
@@ -101,7 +101,7 @@ Departamento* ListaDepartamento::buscaDepartamento(std::string& nome)
         if (aux->getDepartamento()->getNome() == nome) return aux->getDepartamento();
         else aux = aux->getProx();
     }
-    std::cout << "Não encontrado o Departamento" << std::endl;
+    std::cout << "Nao encontrado o Departamento" << std::endl;
     return nullptr;
 }
 

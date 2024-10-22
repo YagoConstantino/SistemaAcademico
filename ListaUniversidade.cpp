@@ -55,7 +55,7 @@ bool ListaUniversidade::removeUniversidade(Universidade* pu)
 
 	if (aux == nullptr)
 	{
-		printf("Universidade não encontrada\n");
+		printf("Universidade nao encontrada\n");
 		return false;
 	}
 
@@ -111,6 +111,6 @@ Universidade* ListaUniversidade::buscaUniv(std::string& nome)
 		if (aux->getUniv()->getNome() == nome) return aux->getUniv();
 		else aux = aux->getProx();
 	}
-	std::cout << "Não encontrado a Universidade" << std::endl;
+	std::cout << "Nao encontrado a Universidade" << std::endl;
 	return nullptr;
 }

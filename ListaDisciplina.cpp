@@ -98,6 +98,6 @@ Disciplina* ListaDisciplina::buscaDisciplina(std::string& nome)
         if (aux->getDisciplina()->getNome() == nome) return aux->getDisciplina();
         else aux = aux->getProx();
     }
-    std::cout << "Não encontrado a Disciplina" << std::endl;
+    std::cout << "Nao encontrado a Disciplina" << std::endl;
     return nullptr;
 }

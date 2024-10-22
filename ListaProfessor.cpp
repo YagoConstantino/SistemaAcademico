@@ -111,6 +111,6 @@ Professor* ListaProfessor::buscaProfessor(std::string& nome)
         if (aux->getProfessor()->getNome() == nome) return aux->getProfessor();
         else aux = aux->getProx();
     }
-    std::cout << "Não encontrado o Professor" << std::endl;
+    std::cout << "Nao encontrado o Professor" << std::endl;
     return nullptr;
 }

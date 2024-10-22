@@ -116,9 +116,9 @@ void Menu::CadDisciplina()
 			pDisciplina->setArea(areaDeConhecimneto);
 			pDisciplina->setDepartamento(pDepart);
 			
-
-			pDepart->incluiDisciplina(pDisciplina);
 			objListaDisciplina->incluiDisciplina(pDisciplina);
+			pDepart->incluiDisciplina(pDisciplina);
+			
 		}
 		else
 		{
