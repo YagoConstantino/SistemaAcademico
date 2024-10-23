@@ -114,3 +114,25 @@ Professor* ListaProfessor::buscaProfessor(std::string& nome)
     std::cout << "Nao encontrado o Professor" << std::endl;
     return nullptr;
 }
+
+void ListaProfessor::UnivOndeProfsTrabalham()
+{
+    ElProfessor* aux = pProfessorPrim;
+    while (aux != nullptr)
+    {
+        std::cout << "O professor :" << aux->getProfessor()->getNome() << " Trabalha na " 
+            << aux->getProfessor()->getUniv()->getNome() << std::endl;
+        aux = aux->getProx();
+    }
+}
+
+void ListaProfessor::DepOndeProfsTrabalham()
+{
+    ElProfessor* aux = pProfessorPrim;
+    while (aux != nullptr)
+    {
+        std::cout << "O professor :" << aux->getProfessor()->getNome() << " Trabalha no "
+            << aux->getProfessor()->getDepart()->getNome() << std::endl;
+        aux = aux->getProx();
+    }
+}

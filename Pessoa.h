@@ -13,6 +13,7 @@ protected:
 public:
 	Pessoa(int dia, int mes, int ano);
 	Pessoa();
+	Pessoa(int i);
 	~Pessoa();
 
 	void inicializa(int diaNa, int mesNa, int anoNa);

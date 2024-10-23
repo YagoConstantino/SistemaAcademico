@@ -17,6 +17,7 @@ private:
 public:
 	Aluno(int dia, int mes, int ano);
 	Aluno();
+	Aluno(int i, int ra);
 	~Aluno();
 
 	void setRa(int ra) { RA = ra; }

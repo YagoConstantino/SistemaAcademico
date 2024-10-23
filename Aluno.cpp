@@ -26,6 +26,15 @@ Aluno::Aluno() :Pessoa()
     RA = -1;
 }
 
+Aluno::Aluno(int i, int ra):
+	Pessoa(i),RA(ra)
+{
+	pUnivFiliado = nullptr;
+	pDepartFiliado = nullptr;
+	objListaDisciplina = new ListaDisciplina();
+
+}
+
 Aluno::~Aluno()
 {
 	pUnivFiliado = nullptr;

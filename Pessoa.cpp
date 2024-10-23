@@ -10,6 +10,12 @@ Pessoa::Pessoa()
 	inicializa(0, 0, 0);
 }
 
+Pessoa::Pessoa(int i)
+{
+	inicializa(0, 0, 0);
+	setID(i);
+}
+
 Pessoa::~Pessoa()
 {
 

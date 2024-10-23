@@ -20,4 +20,7 @@ public:
 
 	ElProfessor* getPprim() { return pProfessorPrim; }
 	Professor* buscaProfessor(std::string& nome);
+
+	void UnivOndeProfsTrabalham();
+	void DepOndeProfsTrabalham();
 };
