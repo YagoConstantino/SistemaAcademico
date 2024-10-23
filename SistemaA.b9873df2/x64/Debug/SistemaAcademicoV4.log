@@ -1,2 +1,21 @@
-﻿  Menu.cpp
+﻿  Aluno.cpp
+  Departamento.cpp
+  Disciplina.cpp
+  ELAluno.cpp
+  ElDepartamento.cpp
+  ElDisciplina.cpp
+  ElProfessor.cpp
+  ElUniversidade.cpp
+  ListaAluno.cpp
+  ListaDepartamento.cpp
+  ListaDisciplina.cpp
+  ListaProfessor.cpp
+  ListaUniversidade.cpp
+  Menu.cpp
+  Principal.cpp
+  Professor.cpp
+C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\Principal.cpp(6,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  SistemaAcademicoV4.cpp
+  Universidade.cpp
+  Gerando Código...
   SistemaAcademicoV4.vcxproj -> C:\Users\yagoa\OneDrive\Área de Trabalho\TecProg\SistemaAcademicov4.1\SistemaAcademico\x64\Debug\SistemaAcademicoV4.exe
